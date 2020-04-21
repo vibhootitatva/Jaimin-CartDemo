@@ -22,6 +22,7 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         productImage.contentMode = .scaleAspectFit
         productImage.layer.cornerRadius = (productImage.frame.size.width)/2
+    
         
 
         // Do any additional setup after loading the view.
