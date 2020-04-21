@@ -89,7 +89,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Card LIst" id="Wda-Xd-T8d">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="S4J-5f-ioC"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="S4J-5f-ioC">
+                            <connections>
+                                <action selector="didTapOnPlusButton:" destination="BYZ-38-t0r" id="nBI-ug-mJL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -137,6 +141,9 @@
                                     <constraint firstAttribute="height" constant="30" id="Kv2-R4-f2u"/>
                                 </constraints>
                                 <state key="normal" title="AddToCart"/>
+                                <connections>
+                                    <action selector="didTapOnAddToCart:" destination="rVT-Fj-Ga4" eventType="touchUpInside" id="wot-iH-R4M"/>
+                                </connections>
                             </button>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="oig-io-MGA">
                                 <rect key="frame" x="10" y="346" width="394" height="32"/>

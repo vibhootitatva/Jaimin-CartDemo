@@ -7,8 +7,12 @@
 //
 
 import UIKit
+protocol senditem {
+    func item(producttitle:String,productprice:String,productimage:UIImage,productdescription:String)
+}
 
 class SecondViewController: UIViewController {
+    var delegate:senditem!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productTitleTextField: UITextField!
     @IBOutlet weak var productDescriptionTextField: UITextField!
@@ -19,8 +23,33 @@ class SecondViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    func imagePicker() {
+        let imagepicker = UIImagePickerController()
+        imagepicker.delegate = self
+        imagepicker.sourceType = .photoLibrary
+        self.present(imagepicker, animated: true, completion: nil)
+    }
+    func alert(message:String) {
+        let alert = UIAlertController(title: "Some error Occcured", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
-
+    @IBAction func didTapOnAddToCart(_ sender: UIButton) {
+        if(productTitleTextField.text?.count == 0 || productTitleTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty == true) {
+            self.alert(message: "Please Enter ProductList Field")
+        }
+        else if(productDescriptionTextField.text?.count == 0 || productDescriptionTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty == true) {
+            self.alert(message: "Please Enter ProductDescription Field")
+        }
+        else if(productPriceTextField.text?.count == 0 || productPriceTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty == true){
+            self.alert(message: "Please enter Product Price")
+        }
+        else {
+            delegate.item(producttitle: productTitleTextField.text ?? "", productprice: productPriceTextField.text ?? "", productimage: productImage.image ?? UIImage(), productdescription: productDescriptionTextField.text ?? "")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -31,4 +60,11 @@ class SecondViewController: UIViewController {
     }
     */
 
+}
+extension SecondViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    if let pickedImage = info [ UIImagePickerController.InfoKey.originalImage] as? UIImage! {
+        productImage.contentMode = .scaleAspectFit
+        productImage.image =
+    }
+    
 }
