@@ -7,8 +7,18 @@
 //
 
 import Foundation
+import UIKit
 struct CardList {
     var title:String?
     var description:String?
     var price:String?
+    var productimage:UIImage?
+    
+    init(title:String?,description:String?,price:String,productimage : UIImage) {
+        self.title = title
+        self.price = price
+        self.description = description
+        self.productimage = productimage
+    }
+    
 }

@@ -12,7 +12,7 @@ protocol senditem {
 }
 
 class SecondViewController: UIViewController {
-    var delegate:senditem!
+    var delegate:senditem?
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productTitleTextField: UITextField!
     @IBOutlet weak var productDescriptionTextField: UITextField!
@@ -20,6 +20,9 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        productImage.contentMode = .scaleAspectFit
+        productImage.layer.cornerRadius = (productImage.frame.size.width)/2
+        
 
         // Do any additional setup after loading the view.
     }
@@ -51,7 +54,8 @@ class SecondViewController: UIViewController {
             self.alert(message: "Please enter Product Price")
         }
         else {
-            delegate.item(producttitle: productTitleTextField.text ?? "", productprice: productPriceTextField.text ?? "", productimage: productImage.image ?? UIImage(), productdescription: productDescriptionTextField.text ?? "")
+            delegate?.item(producttitle: productTitleTextField.text ?? "", productprice: productPriceTextField.text ?? "", productimage: productImage.image ?? UIImage(), productdescription: productDescriptionTextField.text ?? "")
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
