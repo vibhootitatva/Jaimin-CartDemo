@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     var data:[CardList] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        data.append(CardList(title: "producttitle", description: "productdescription", price: 10, productimage: UIimage))
+
         // Do any additional setup after loading the view.
     }
     
@@ -44,7 +45,7 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 320.0
+        return 150
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -54,7 +55,7 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "SecondViewController") as! SecondViewController
-        vc.
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

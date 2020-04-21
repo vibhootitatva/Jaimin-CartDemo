@@ -18,16 +18,21 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var productDescriptionTextField: UITextField!
     @IBOutlet weak var productPriceTextField: UITextField!
     
+    @IBOutlet weak var stepperLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        productImage.contentMode = .scaleAspectFit
-        productImage.layer.cornerRadius = (productImage.frame.size.width)/2
+        productImage.contentMode = .scaleAspectFill
+        
+        
     
         
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func valueStepper(_ sender: UIStepper) {
+        stepperLabel.text = String(sender.value)
+    }
     @IBAction func didTapOnSelectImage(_ sender: Any) {
         let imagepicker = UIImagePickerController()
                imagepicker.delegate = self
