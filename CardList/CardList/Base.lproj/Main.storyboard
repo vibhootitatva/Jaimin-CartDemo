@@ -136,9 +136,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X6-NH-tKp">
-                                <rect key="frame" x="10" y="478" width="394" height="30"/>
+                                <rect key="frame" x="10" y="488" width="394" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Kv2-R4-f2u"/>
+                                    <constraint firstAttribute="height" constant="30" id="8f2-Lf-vfd"/>
                                 </constraints>
                                 <state key="normal" title="AddToCart"/>
                                 <connections>
@@ -148,6 +148,16 @@
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="oig-io-MGA">
                                 <rect key="frame" x="10" y="346" width="394" height="32"/>
                             </stepper>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAz-pG-wxo">
+                                <rect key="frame" x="10" y="418" width="394" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AjI-3V-yqc"/>
+                                </constraints>
+                                <state key="normal" title="Select Image"/>
+                                <connections>
+                                    <action selector="didTapOnSelectImage:" destination="rVT-Fj-Ga4" eventType="touchUpInside" id="NeL-HZ-OqN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -156,16 +166,19 @@
                             <constraint firstItem="biv-aE-XMP" firstAttribute="top" secondItem="d0z-Q8-cAb" secondAttribute="bottom" constant="10" id="89A-Qp-yEH"/>
                             <constraint firstItem="oig-io-MGA" firstAttribute="top" secondItem="IVK-zQ-Oyc" secondAttribute="bottom" constant="10" id="B1C-iD-Q2Z"/>
                             <constraint firstItem="IVK-zQ-Oyc" firstAttribute="leading" secondItem="TuM-wD-5nm" secondAttribute="leading" constant="10" id="Bgz-Hm-whE"/>
-                            <constraint firstItem="TuM-wD-5nm" firstAttribute="trailing" secondItem="0X6-NH-tKp" secondAttribute="trailing" constant="10" id="FTN-2Z-cqG"/>
                             <constraint firstItem="TuM-wD-5nm" firstAttribute="trailing" secondItem="IVK-zQ-Oyc" secondAttribute="trailing" constant="10" id="IRW-Xu-seO"/>
+                            <constraint firstItem="jAz-pG-wxo" firstAttribute="top" secondItem="oig-io-MGA" secondAttribute="bottom" constant="40" id="MFb-Mz-UsT"/>
                             <constraint firstItem="TuM-wD-5nm" firstAttribute="trailing" secondItem="WfT-oy-9CD" secondAttribute="trailing" constant="10" id="P08-tL-g1J"/>
+                            <constraint firstItem="0X6-NH-tKp" firstAttribute="top" secondItem="jAz-pG-wxo" secondAttribute="bottom" constant="40" id="Q5A-Fp-b8f"/>
+                            <constraint firstItem="0X6-NH-tKp" firstAttribute="leading" secondItem="TuM-wD-5nm" secondAttribute="leading" constant="10" id="QgW-Ca-hSq"/>
                             <constraint firstItem="WfT-oy-9CD" firstAttribute="leading" secondItem="TuM-wD-5nm" secondAttribute="leading" constant="10" id="RgI-QD-paK"/>
                             <constraint firstItem="WfT-oy-9CD" firstAttribute="top" secondItem="biv-aE-XMP" secondAttribute="bottom" constant="10" id="UcR-cG-jAH"/>
                             <constraint firstItem="TuM-wD-5nm" firstAttribute="trailing" secondItem="oig-io-MGA" secondAttribute="trailing" constant="10" id="UjC-oZ-jCp"/>
+                            <constraint firstItem="jAz-pG-wxo" firstAttribute="leading" secondItem="TuM-wD-5nm" secondAttribute="leading" constant="10" id="WPU-GT-Tl7"/>
                             <constraint firstItem="oig-io-MGA" firstAttribute="leading" secondItem="TuM-wD-5nm" secondAttribute="leading" constant="10" id="eDd-zW-Hxa"/>
-                            <constraint firstItem="0X6-NH-tKp" firstAttribute="leading" secondItem="TuM-wD-5nm" secondAttribute="leading" constant="10" id="spp-4D-HnH"/>
+                            <constraint firstItem="TuM-wD-5nm" firstAttribute="trailing" secondItem="0X6-NH-tKp" secondAttribute="trailing" constant="10" id="fLI-nE-kqh"/>
+                            <constraint firstItem="TuM-wD-5nm" firstAttribute="trailing" secondItem="jAz-pG-wxo" secondAttribute="trailing" constant="10" id="kyJ-Dn-VPV"/>
                             <constraint firstItem="d0z-Q8-cAb" firstAttribute="centerX" secondItem="TuM-wD-5nm" secondAttribute="centerX" id="sqt-ix-Udr"/>
-                            <constraint firstItem="0X6-NH-tKp" firstAttribute="top" secondItem="oig-io-MGA" secondAttribute="bottom" constant="100" id="u3a-EF-ULi"/>
                             <constraint firstItem="d0z-Q8-cAb" firstAttribute="top" secondItem="TuM-wD-5nm" secondAttribute="top" constant="10" id="wZI-6C-oMw"/>
                             <constraint firstItem="IVK-zQ-Oyc" firstAttribute="top" secondItem="WfT-oy-9CD" secondAttribute="bottom" constant="10" id="yyt-zz-aP0"/>
                         </constraints>

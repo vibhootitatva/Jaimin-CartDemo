@@ -23,12 +23,17 @@ class SecondViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    func imagePicker() {
+    
+    @IBAction func didTapOnSelectImage(_ sender: Any) {
         let imagepicker = UIImagePickerController()
-        imagepicker.delegate = self
-        imagepicker.sourceType = .photoLibrary
-        self.present(imagepicker, animated: true, completion: nil)
+               imagepicker.delegate = self
+               imagepicker.sourceType = .photoLibrary
+               self.present(imagepicker, animated: true, completion: nil)
     }
+    
+    
+       
+    
     func alert(message:String) {
         let alert = UIAlertController(title: "Some error Occcured", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -62,9 +67,12 @@ class SecondViewController: UIViewController {
 
 }
 extension SecondViewController:UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    if let pickedImage = info [ UIImagePickerController.InfoKey.originalImage] as? UIImage! {
-        productImage.contentMode = .scaleAspectFit
-        productImage.image =
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            productImage.contentMode = .scaleAspectFit
+            productImage.image = pickedImage
+        }
+        dismiss(animated: true, completion: nil)
     }
     
 }
